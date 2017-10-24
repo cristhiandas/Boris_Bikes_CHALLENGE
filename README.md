@@ -7,11 +7,16 @@ The goal of this projects it is not complete all of them but get knowledge, spen
 
 ##How to use it
 
-Just type "ruby boris_bike.rb"
+Type "ruby boris_bike.rb"
 
 ## User Stories
 
 |    Objects    |    Messages   |
 | ------------- |:-------------:|
 | Person        |               |
-| Bike          |docking_station|
+| DockingStation|release_bike   |
+| GoodBike      |bike_working_? |
+
+
+DockingStation <-- release_bike --> a Bike
+GoodBike       <--   working?   --> true/false
