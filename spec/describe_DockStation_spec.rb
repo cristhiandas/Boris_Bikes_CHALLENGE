@@ -1,4 +1,4 @@
-require "DockingStation_class"
+require "classes"
 
 describe DockingStation do
   it { expect(DockingStation.new).to respond_to(:release_bike) }
