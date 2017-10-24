@@ -7,4 +7,11 @@ The goal of this projects it is not complete all of them but get knowledge, spen
 
 ##How to use it
 
-jus type "ruby boris_bike.rb"
+Just type "ruby boris_bike.rb"
+
+## User Stories
+
+|    Objects    |    Messages   |
+| ------------- |:-------------:|
+| Person        |               |
+| Bike          |docking_station|
