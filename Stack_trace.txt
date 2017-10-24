@@ -1,7 +1,7 @@
 Type of the error: NameError
 
-File path: /home/cristhiandas/.rvm/rubies/ruby-2.2.2/bin/irb:11:in `<main>'
+File path: /home/cristhiandas/.rvm/rubies/ruby-2.2.2/bin
 
-Line number of the error: 1
+Line number of the error: 11
 
 How to solve it: A way is initializing DockStation or setting it to a value.
