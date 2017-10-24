@@ -5,10 +5,6 @@ In the following project We are supposed to build a program that will emulate al
 It is composed by 22 challenges.
 The goal of this projects it is not complete all of them but get knowledge, spending time in researches and learning how to solve problems.
 
-##How to use it
-
-Type "ruby boris_bike.rb"
-
 ## User Stories
 
 |    Objects    |    Messages   |
