@@ -1,4 +1,6 @@
-describe Dockingstation do
+require "DockingStation_class"
+
+describe DockingStation do
   it 'Release a bike' do
 
   end
