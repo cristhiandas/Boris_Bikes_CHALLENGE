@@ -11,8 +11,14 @@ The goal of this projects it is not complete all of them but get knowledge, spen
 | ------------- |:-------------:|
 | Person        |               |
 | DockingStation|release_bike   |
-| GoodBike      |bike_working_? |
+| Bike          | working? |
+| Public        |               |
+| DockingStation|dock_bike      |
+| DockingStation|has_bike?      |
+| Bike          | docked?       |
+
 
 
 DockingStation <-- release_bike --> a Bike <br />
 GoodBike       <--   working?   --> true/false
+DockingStation <-- dock_bike --> true/false
