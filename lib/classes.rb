@@ -1,16 +1,25 @@
 class DockingStation
 
-  attr_reader :bikes
-
-  def initialize
+  attr_reader :bikes, :capacity_limit
+    
+  def initialize(capacity_limit = 1)
     @bikes = []
+    @capacity_limit = capacity_limit
   end
 
-  def dock(bike)
+  def check_bike(bike)
     if !bike.is_a? Bike
       raise ArgumentError, "expecting a bike, not #{bike.class}"
     end
-    @bikes << bike
+  end
+
+  def dock(bike)
+    check_bike(bike)
+    if at_capacity?
+      raise "adding bike when at capacity"
+    else
+      @bikes << bike
+    end
     self
   end
 
@@ -24,12 +33,19 @@ class DockingStation
     raise RuntimeError, "no bikes available"
   end
 
-def has_bike?
-  !@bikes.empty?
+  def has_bike?
+    !@bikes.empty?
+  end
+
+  def at_capacity?
+    @capacity_limit <= capacity
+  end
+
+  def capacity
+    @bikes.count
   end
 
 end
-
 
 class Bike
   def working?
