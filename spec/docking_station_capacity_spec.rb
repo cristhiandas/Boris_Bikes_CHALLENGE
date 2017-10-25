@@ -26,8 +26,8 @@ describe DockingStation do
       is_expected.to respond_to :capacity_limit
     end
 
-    it "created with capacity limit of 1" do
-      expect(described_class.new.capacity_limit).to eq 1
+    it "created with capacity limit of 20" do
+      expect(described_class.new.capacity_limit).to eq 20
     end
 
     it "created with custom capacity limit" do
@@ -47,7 +47,7 @@ describe DockingStation do
     end
 
     it "correctly checks capacity" do
-      ds = described_class.new(6)
+      ds = described_class.new
       5.times { ds.dock(Bike.new) } 
       expect(ds.capacity).to eq 5
     end
