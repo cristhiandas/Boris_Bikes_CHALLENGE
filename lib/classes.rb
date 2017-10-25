@@ -2,7 +2,7 @@ class DockingStation
 
   attr_reader :bikes, :capacity_limit
     
-  def initialize(capacity_limit = 1)
+  def initialize(capacity_limit = 20)
     @bikes = []
     @capacity_limit = capacity_limit
   end
