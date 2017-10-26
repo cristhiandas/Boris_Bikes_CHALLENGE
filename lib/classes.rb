@@ -24,17 +24,28 @@ def initialize(capacity_limit = DEFAULT_CAPACITY)
   end
 
   def do_release
-    @bikes.pop
+    @bikes.each do |bike|
+      if !bike.broken
+        bicicleta = bike
+        @bikes.delete(bike)
+        return bicicleta
+      end
+    end
+    nil
   end
 
   def release_bike
     bike = do_release
     return bike unless bike.nil?
-    raise RuntimeError, "no bikes available"
+    raise RuntimeError, "no working bikes available"
   end
 
   def capacity
     @bikes.count
+  end
+
+  def report_broken
+    true
   end
 
   private
@@ -51,7 +62,17 @@ def initialize(capacity_limit = DEFAULT_CAPACITY)
 end
  public
 class Bike
-  def working?
-    true
+  attr_accessor :broken
+
+  def initialize(broken = false)
+    @broken = broken
   end
+
+
+
+  def working?
+    !self.broken
+  end
+
+
 end
