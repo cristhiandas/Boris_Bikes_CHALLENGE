@@ -3,8 +3,8 @@ require "classes"
 describe DockingStation do
 
   subject(:docking_station) { described_class.new }
-  subject(:bike) { Bike.new }
-  subject(:broken_bike) { Bike.new(true) }
+  subject(:bike) { double(:bike) }
+  subject(:broken_bike) { double(:bike)(true) }
 
   describe 'when created' do
     it { expect(docking_station.bikes).to be_a Array }
@@ -48,7 +48,7 @@ describe DockingStation do
     context "with bikes" do
 
       it "It is a Bike" do
-        expect(docking_station.dock(Bike.new).release_bike).to be_a Bike
+        expect(docking_station.dock(double(:bike)).release_bike).to be_a Bike
       end
       it "Doesn't release broken bikes" do
         expect { docking_station.dock(broken_bike).release_bike }.to raise_error(RuntimeError)
@@ -56,7 +56,7 @@ describe DockingStation do
 
 
       # it "consumes one bike" do
-      #   docking_station.dock(Bike.new)
+      #   docking_station.dock(double(:bike))
       #   docking_station.release_bike
       #   expect(docking_station).to_not have_bike
       # end
@@ -67,7 +67,7 @@ describe DockingStation do
   describe "It can be reported Broken" do
     it { expect(docking_station).to respond_to(:report_broken) }
     it { expect(docking_station.report_broken).to eq true }
-    it { expect(Bike.new(docking_station.report_broken).working?).to eq false }
+    it { expect(double(:bike)(docking_station.report_broken).working?).to eq false }
 
   end
 
