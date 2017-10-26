@@ -1,7 +1,7 @@
 class DockingStation
 
   attr_reader :bikes, :capacity_limit
-    
+
   def initialize(capacity_limit = 20)
     @bikes = []
     @capacity_limit = capacity_limit
@@ -33,20 +33,23 @@ class DockingStation
     raise RuntimeError, "no bikes available"
   end
 
-  def has_bike?
-    !@bikes.empty?
+  def capacity
+    @bikes.count
   end
+
+  private
 
   def at_capacity?
     @capacity_limit <= capacity
   end
 
-  def capacity
-    @bikes.count
+  def has_bike?
+    !@bikes.empty?
   end
 
-end
 
+end
+ public
 class Bike
   def working?
     true

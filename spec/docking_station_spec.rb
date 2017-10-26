@@ -26,7 +26,7 @@ describe DockingStation do
   describe 'releases bikes' do
 
     context "supports methods" do
-      it { expect(docking_station).to respond_to(:has_bike?) }
+      # it { expect(docking_station).to respond_to(:has_bike?) }
       it { expect(docking_station).to respond_to(:release_bike) }
     end
 
@@ -36,7 +36,7 @@ describe DockingStation do
         expect { docking_station.release_bike }.to raise_error(RuntimeError)
       end
 
-      it { expect(docking_station).to_not have_bike }
+      # it { expect(docking_station).to_not have_bike }
     end
 
     context "with bikes" do
@@ -45,11 +45,11 @@ describe DockingStation do
         expect(docking_station.dock(Bike.new).release_bike).to be_a Bike
       end
 
-      it "consumes one bike" do
-        docking_station.dock(Bike.new)
-        docking_station.release_bike
-        expect(docking_station).to_not have_bike
-      end
+      # it "consumes one bike" do
+      #   docking_station.dock(Bike.new)
+      #   docking_station.release_bike
+      #   expect(docking_station).to_not have_bike
+      # end
 
     end
   end

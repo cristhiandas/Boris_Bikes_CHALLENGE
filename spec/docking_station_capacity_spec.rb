@@ -4,21 +4,21 @@ describe DockingStation do
 
   subject { described_class.new }
 
-  describe "can check whether there are bikes" do
-
-    it "responds to `have_bike?`" do
-      is_expected.to respond_to :has_bike? 
-    end
-
-    it "return false with no bikes" do
-      is_expected.to_not have_bike
-    end
-
-    it "return true when has bikes" do
-      expect(described_class.new.dock(Bike.new)).to have_bike
-    end
-
-  end
+  # describe "can check whether there are bikes" do
+  #
+  #   it "responds to `has_bike?`" do
+  #     is_expected.to respond_to :has_bike?
+  #   end
+  #
+  #   it "return false with no bikes" do
+  #     is_expected.to_not have_bike
+  #   end
+  #
+  #   it "return true when has bikes" do
+  #     expect(described_class.new.dock(Bike.new)).to have_bike
+  #   end
+  #
+  # end
 
   describe "has capacity limit" do
 
@@ -33,7 +33,7 @@ describe DockingStation do
     it "created with custom capacity limit" do
       expect(described_class.new(5).capacity_limit).to eq 5
     end
-    
+
   end
 
   describe "knows capacity" do
@@ -48,28 +48,25 @@ describe DockingStation do
 
     it "correctly checks capacity" do
       ds = described_class.new
-      5.times { ds.dock(Bike.new) } 
+      5.times { ds.dock(Bike.new) }
       expect(ds.capacity).to eq 5
     end
 
   end
 
-  describe "knows when at capacity" do
-
-    it "responds to `at_capacity?`" do
-      is_expected.to respond_to :at_capacity?
-    end
-
-    it "false when below capacity" do
-      is_expected.to_not be_at_capacity
-    end
-
-    it "true when at capacity" do
-      expect(described_class.new(0)).to be_at_capacity
-    end
-
-  end
+  # describe "knows when at capacity" do
+  #
+  #   it "responds to `at_capacity?`" do
+  #     is_expected.to respond_to :at_capacity?
+  #   end
+  #
+  #   it "false when below capacity" do
+  #     is_expected.to_not be_at_capacity
+  #   end
+  #
+  #   it "true when at capacity" do
+  #     expect(described_class.new(0)).to be_at_capacity
+  #   end
+  #
+  # end
 end
-
-
-
