@@ -1,7 +1,7 @@
 require "classes"
 
 describe DockingStation do
-
+  let(:bike) { double :bike }
   subject { described_class.new }
 
   # describe "can check whether there are bikes" do
@@ -15,7 +15,7 @@ describe DockingStation do
   #   end
   #
   #   it "return true when has bikes" do
-  #     expect(described_class.new.dock(Bike.new)).to have_bike
+  #     expect(described_class.new.dock(double(:bike))).to have_bike
   #   end
   #
   # end
@@ -48,7 +48,7 @@ describe DockingStation do
 
     it "correctly checks capacity" do
       ds = described_class.new
-      5.times { ds.dock(Bike.new) }
+      5.times { ds.dock(bike) }
       expect(ds.capacity).to eq 5
     end
 

@@ -1,8 +1,8 @@
 class DockingStation
 
   attr_reader :bikes, :capacity_limit
-
-  def initialize(capacity_limit = 20)
+  DEFAULT_CAPACITY = 20
+def initialize(capacity_limit = DEFAULT_CAPACITY)
     @bikes = []
     @capacity_limit = capacity_limit
   end
@@ -14,7 +14,7 @@ class DockingStation
   end
 
   def dock(bike)
-    check_bike(bike)
+    # check_bike(bike)
     if at_capacity?
       raise "adding bike when at capacity"
     else
@@ -62,7 +62,11 @@ class DockingStation
 end
 
  public
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> ee0c8518278d3af812b3934c9f028fbd8a6948da
 class Bike
   attr_accessor :broken
 
@@ -70,11 +74,8 @@ class Bike
     @broken = broken
   end
 
-
-
   def working?
     !self.broken
   end
-
 
 end
