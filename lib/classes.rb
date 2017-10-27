@@ -60,7 +60,9 @@ class DockingStation
 
 
 end
+
  public
+
 class Bike
   attr_accessor :broken
 
