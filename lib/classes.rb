@@ -14,7 +14,7 @@ def initialize(capacity_limit = DEFAULT_CAPACITY)
   end
 
   def dock(bike)
-    check_bike(bike)
+    # check_bike(bike)
     if at_capacity?
       raise "adding bike when at capacity"
     else
@@ -61,6 +61,7 @@ def initialize(capacity_limit = DEFAULT_CAPACITY)
 
 end
  public
+ 
 class Bike
   attr_accessor :broken
 
@@ -68,11 +69,8 @@ class Bike
     @broken = broken
   end
 
-
-
   def working?
     !self.broken
   end
-
 
 end
