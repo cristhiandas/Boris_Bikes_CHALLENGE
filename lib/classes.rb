@@ -62,11 +62,7 @@ def initialize(capacity_limit = DEFAULT_CAPACITY)
 end
 
  public
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> ee0c8518278d3af812b3934c9f028fbd8a6948da
 class Bike
   attr_accessor :broken
 
